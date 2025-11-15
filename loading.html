@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<title>LOADING THE KS SERVER</title>
+  <script>
+function getMapName() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('map') || "Unknown Map";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mapName = getMapName();
+    document.getElementById("map-name").innerText = mapName;
+    
+    // Optional: Set a map thumbnail
+    const thumb = document.getElementById("map-thumb");
+    thumb.src = `images/${mapName}.jpg`; // You can store a thumbnail for each map
+});
+</script>
+  <style>
+        body { margin:0; background:#222; color:white; font-family:sans-serif; text-align:center; }
+        #map-thumb { max-width:80%; margin-top:50px; border:2px solid white; }
+        #map-name { font-size:2em; margin-top:20px; }
+    </style>
+  <body style="background-color: black;">
+    <center><img src="FLIPPER.gif"></center>
+    <img id="map-thumb" src="images/default.jpg">
+    <div id="map-name">Loading Map...</div>
+<center>Testing shit.
+  This is a loading screen omg wow
+  </center>
+    
+  </body>
+
+  
+</html>
